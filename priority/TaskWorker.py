@@ -21,5 +21,5 @@ class TaskWorker(Process):
             self.running.wait()
 
             task = self.tasks_q.get()
-            print 'proc(%s) >> task: %s' % (self.proc_num, task)
+            print 'proc(%s) >> task: priority=%s, contents=%s' % (self.proc_num, task.is_priority, task.contents)
             Utility.random_sleep()
